@@ -3,28 +3,16 @@
 int main(void)
 {
     int n;
-    long total = 0;
-    int i = 1;
-    scanf("%d", &n);
+    long long total = 0;
+    if (scanf("%d", &n) != 1)
+        return 0;
     if (n < 0)
     {
         printf("NG");
         return 0;
     }
-    while (1)
-    {
-        if (i > n)
-        {
-            break;
-        }
-        if (i % 2 != 0)
-        {
-            i++;
-            continue;
-        }
-        total += i;
-        i++;
-    }
-    printf("%ld", total);
+    for (long long number = 2; number <= n; number += 2)
+        total += number;
+    printf("%lld", total);
     return 0;
 }
